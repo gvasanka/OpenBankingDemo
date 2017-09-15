@@ -1,0 +1,62 @@
+<data name="getATMDetailsDataService" serviceGroup="" serviceNamespace="http://wso2.com/getATMDetails/dataservice">
+    <description/>
+    <config id="default">
+        <property name="carbon_datasource_name">openbank_demo</property>
+    </config>
+    <query id="getATMDetailsByCity" useConfig="default">
+        <sql>SELECT * from ATMdata where city=? </sql>
+        <result element="ATMdataSet" rowName="ATMdata">
+            <element column="ATMID" name="ATMID" xsdType="xs:integer"/>
+            <element column="locationCategory" name="locationCategory" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="AddressLine1" name="AddressLine1" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="AddressLine2" name="AddressLine2" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="AddressLine3" name="AddressLine3" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="city" name="city" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="state" name="state" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="postcode" name="postcode" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="country" name="country" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="latitude" name="latitude" exportType="SCALAR" xsdType="xs:integer"/>
+            <element column="longitude" name="longitude" exportType="SCALAR" xsdType="xs:integer"/>
+            <element column="supportedLanguages1" name="supportedLanguages" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="supportedLanguages2" name="supportedLanguages" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="supportedLanguages3" name="supportedLanguages" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="currencySupported1" name="currencySupported" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="currencySupported2" name="currencySupported" exportType="SCALAR" xsdType="xs:string"/>
+            <element column="currencySupported3" name="currencySupported" exportType="SCALAR" xsdType="xs:string"/>
+        </result>
+        <param name="city" paramType="SCALAR" sqlType="STRING" type="IN"/>
+    </query>
+    <operation name="getATMDetailsByCity">
+        <call-query href="getATMDetailsByCity">
+            <with-param name="city" query-param="city"/>
+        </call-query>
+    </operation>
+    <query id="getATMDetailsByCountry" useConfig="default">
+        <sql>SELECT * FROM ATMdata where country= ?</sql>
+        <result element="ATMdataSet" rowName="ATMdata">
+            <element column="ATMID" name="ATMID" xsdType="xs:integer"/>
+            <element column="locationCategory" name="locationCategory" xsdType="xs:string"/>
+            <element column="AddressLine1" name="AddressLine1" xsdType="xs:string"/>
+            <element column="AddressLine2" name="AddressLine2" xsdType="xs:string"/>
+            <element column="AddressLine3" name="AddressLine3" xsdType="xs:string"/>
+            <element column="city" name="city" xsdType="xs:string"/>
+            <element column="state" name="state" xsdType="xs:string"/>
+            <element column="postcode" name="postcode" xsdType="xs:string"/>
+            <element column="country" name="country" xsdType="xs:string"/>
+            <element column="latitude" name="latitude" xsdType="xs:integer"/>
+            <element column="longitude" name="longitude" xsdType="xs:integer"/>
+            <element column="supportedLanguages1" name="supportedLanguages" xsdType="xs:string"/>
+            <element column="supportedLanguages2" name="supportedLanguages" xsdType="xs:string"/>
+            <element column="supportedLanguages3" name="supportedLanguages" xsdType="xs:string"/>
+            <element column="currencySupported1" name="currencySupported" xsdType="xs:string"/>
+            <element column="currencySupported2" name="currencySupported" xsdType="xs:string"/>
+            <element column="currencySupported3" name="currencySupported" xsdType="xs:string"/>
+        </result>
+        <param name="country" paramType="SCALAR" sqlType="STRING" type="IN"/>
+    </query>
+    <operation name="getATMDetailsByCountry">
+        <call-query href="getATMDetailsByCountry">
+            <with-param name="country" query-param="country"/>
+        </call-query>
+    </operation>
+</data>

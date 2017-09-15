@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="OpenBankingDemo_Main_v1.0.0" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full">
+        <property name="############ In API : OpenBankingDemoMain_v1.0.0 ####" value="####################################################"/>
+        <property expression="$ctx:city" name="city"/>
+        <property expression="$ctx:country" name="country"/>
+    </log>
+    <filter regex="true" source="$ctx:isCityBasedSearch">
+        <then>
+            <sequence description="Call city based sequence" key="OpenBankingDemo_CityBasedDBCall_v1.0.0"/>
+        </then>
+        <else>
+            <sequence description="Call country based sequence" key="OpenBankingDemo_CountryBasedDBCall_v1.0.0.xml"/>
+        </else>
+    </filter>
+</sequence>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/getATMDetails/v1.0.0" name="OpenBankingDemo_getATMDetailsAPI_v1.0" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/city/{city}">
+        <inSequence>
+            <property name="isCityBasedSearch" scope="default" type="BOOLEAN" value="true"/>
+            <property expression="$ctx:uri.var.city" name="city" scope="default" type="STRING"/>
+            <sequence description="Call main sequence" key="OpenBankingDemo_Main_v1.0.0"/>
+            <log level="full">
+                <property name="############ In API : Response from main sequence ####" value="####################################################"/>
+            </log>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/country/{country}">
+        <inSequence>
+            <property name="isCityBasedSearch" scope="default" type="BOOLEAN" value="false"/>
+            <property expression="get-property('uri.var.country')" name="country" scope="default" type="STRING"/>
+            <sequence description="Call main sequence" key="OpenBankingDemo_Main_v1.0.0"/>
+            <log level="full">
+                <property name="############ In API : Response from main sequence ####" value="####################################################"/>
+            </log>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="OpenBankingDemo_getATMDetailsDataServiceEp" xmlns="http://ws.apache.org/ns/synapse">
+    <address format="soap12" uri="http://localhost:8290/services/getATMDetailsDataService"/>
+</endpoint>

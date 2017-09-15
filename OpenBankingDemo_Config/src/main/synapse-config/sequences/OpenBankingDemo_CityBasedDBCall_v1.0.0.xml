@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="OpenBankingDemo_CityBasedDBCall_v1.0.0" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full">
+        <property name="############ In Sequence : OpenBankingDemo_CityBasedDBCall_v1.0.0 ####" value="####################################################"/>
+    </log>
+    <payloadFactory description="getATMByCountryCall" media-type="xml">
+        <format>
+            <dat:getATMDetailsByCity xmlns:dat="http://wso2.com/getATMDetails/dataservice">
+                <dat:city>$1</dat:city>
+            </dat:getATMDetailsByCity>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:city"/>
+        </args>
+    </payloadFactory>
+    <call-template target="OpenBankingDemo_getATMDetailsDataServiceCall">
+        <with-param name="soapaction" value="urn:getATMDetailsByCity"/>
+    </call-template>
+</sequence>

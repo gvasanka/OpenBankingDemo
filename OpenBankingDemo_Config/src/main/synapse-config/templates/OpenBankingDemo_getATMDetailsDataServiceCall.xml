@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="OpenBankingDemo_getATMDetailsDataServiceCall" xmlns="http://ws.apache.org/ns/synapse">
+    <sequence>
+        <property expression="$func:soapaction" name="SOAPAction" scope="transport" type="STRING"/>
+        <log level="full">
+            <property name="############ Log DB request message ####" value="####################################################"/>
+        </log>
+        <call>
+            <endpoint key="OpenBankingDemo_getATMDetailsDataServiceEp"/>
+        </call>
+        <log level="full">
+            <property name="############ Log DB response message ####" value="####################################################"/>
+        </log>
+    </sequence>
+</template>

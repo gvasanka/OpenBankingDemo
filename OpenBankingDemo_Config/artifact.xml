@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="OpenBankingDemo_getATMDetailsAPI_v1.0" groupId="com.wso2.OpenBankingDemo_Config.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/OpenBankingDemo_getATMDetailsAPI_v1.0.xml</file>
+    </artifact>
+    <artifact name="OpenBankingDemo_getATMDetailsDataServiceEp" groupId="com.wso2.OpenBankingDemo_Config.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/OpenBankingDemo_getATMDetailsDataServiceEp.xml</file>
+    </artifact>
+    <artifact name="OpenBankingDemo_CityBasedDBCall_v1.0.0" groupId="com.wso2.OpenBankingDemo_Config.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OpenBankingDemo_CityBasedDBCall_v1.0.0.xml</file>
+    </artifact>
+    <artifact name="OpenBankingDemo_CountryBasedDBCall_v1.0.0" groupId="com.wso2.OpenBankingDemo_Config.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OpenBankingDemo_CountryBasedDBCall_v1.0.0.xml</file>
+    </artifact>
+    <artifact name="OpenBankingDemo_Main_v1.0.0" groupId="com.wso2.OpenBankingDemo_Config.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OpenBankingDemo_Main_v1.0.0.xml</file>
+    </artifact>
+    <artifact name="OpenBankingDemo_getATMDetailsDataServiceCall" groupId="com.wso2.OpenBankingDemo_Config.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/OpenBankingDemo_getATMDetailsDataServiceCall.xml</file>
+    </artifact>
+</artifacts>
